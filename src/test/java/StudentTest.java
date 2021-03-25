@@ -1,9 +1,14 @@
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.testng.ITest;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class StudentTest {
 
@@ -14,20 +19,32 @@ public class StudentTest {
 
     @Before
     public void getId() {
-        this.id = 0;
+        this.id = 0L;
 
     }
 
     @Test
     public void getId_GivenEmptyId_ReturnNeededInput() {
 
-        long expectedInputId = 1;
-        long inputId = 0;
+        long expectedInputId = 1L;
+        long inputId = 0L;
 
 
         assertEquals(expectedInputId, inputId);
 
     }
+
+
+    @Test
+    @DisplayName("Ah Ioient Have ")
+    void Ah_Ioient_Have_() {
+        
+        org.junit.jupiter.api.Assertions.fail("Not implemented");
+    }
+
+
+
+
 
 //    @Test
 //    public void getId_GivenWrongFormat_ReturnFormatException() {

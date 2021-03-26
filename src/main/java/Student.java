@@ -8,7 +8,6 @@ public class Student {
     private ArrayList<Integer> grades;
 
 
-
     public Student(long id, String name) {
         this.id = id;
         this.name = name;
@@ -16,7 +15,7 @@ public class Student {
     }
 
     public long getId() {
-        return id;
+        return this.id;
     }
 
 //    public void setId(long id) {
@@ -24,7 +23,7 @@ public class Student {
 //    }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
 //    public void setName(String name) {
@@ -33,7 +32,7 @@ public class Student {
 
     public void addGrade(int grade) {
 
-        grades.add(grade);
+        this.grades.add(grade);
 
     }
 
@@ -51,16 +50,6 @@ public class Student {
 
     }
 
-
-//    public static void main(String[] args) {
-//
-//        Student myself = new Student(178762,"William");
-//        myself.addGrade(70);
-//        myself.addGrade(90);
-//        myself.addGrade(93);
-//
-//        System.out.printf("%.2f", myself.getGradeAverage());
-//    }
 
 
 }

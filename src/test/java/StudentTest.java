@@ -1,57 +1,76 @@
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
-import org.testng.ITest;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.fail;
+//import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StudentTest {
 
-    private long id;
-    private String name;
-    private ArrayList<Integer> grades;
+    Student will;
+    Student bob;
+    String casper;
+
+    @BeforeEach
+    public void setup() {
+
+        will = new Student(1L, "William");
+        bob = new Student(2L, "Bob");
+        casper = null;
 
 
-    @Before
-    public void getId() {
-        this.id = 0L;
+        will.addGrade(99);
+        will.addGrade(90);
+        bob.addGrade(68);
 
     }
 
     @Test
-    public void getId_GivenEmptyId_ReturnNeededInput() {
+    @DisplayName("testStudentConstructor")
+    void testStudentConstructor() {
 
-        long expectedInputId = 1L;
-        long inputId = 0L;
+        assertNull(casper);
+        assertNotNull(will);
 
-
-        assertEquals(expectedInputId, inputId);
-
+//        fail("Not implemented");
     }
-
 
     @Test
-    @DisplayName("Ah Ioient Have ")
-    void Ah_Ioient_Have_() {
-        
-        org.junit.jupiter.api.Assertions.fail("Not implemented");
+    @DisplayName("test StudentGetters")
+    void test_StudentGetters() {
+
+        assertAll(() -> assertSame(1L, will.getId()),
+                () -> assertSame("William", will.getName()),
+                () -> assertSame(2, will.getGrades().size())
+        );
+
+//        fail("Not implemented");
+    }
+
+    @Test
+    @DisplayName("test AddGrade")
+    void test_AddGrade() {
+
+        assertAll(() -> assertSame(99, will.getGrades().get(0)),
+                () -> assertSame(90, will.getGrades().get(1))
+        );
+
+//        fail("Not implemented");
+    }
+
+    @Test
+    @DisplayName("test AverageGrade")
+    void test_AverageGrade() {
+
+        assertEquals(95, will.getGradeAverage(), 0.5);
+
     }
 
 
-
-
-
-//    @Test
-//    public void getId_GivenWrongFormat_ReturnFormatException() {
-//
-//        long inputId = 1.0;
-//
-//    }
 
 
 
